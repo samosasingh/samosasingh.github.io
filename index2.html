@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Samosa Singh</title>
+    <meta name="description" content="">
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+    <!--  
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+        
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+            
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <link rel="stylesheet" type="text/css" href="./samosa_singh_files/semantic.min.css">
+    <!--STYLES-->
+    <link rel="stylesheet" href="./samosa_singh_files/importer.css">
+    <!--STYLES END-->
+    <style>
+        .hidden {
+          display: none !important;
+        }
+
+    </style>
+  </head>
+
+  <body>
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+        
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="./samosa_singh_files/sails.io.js"></script>
+    <script src="./samosa_singh_files/jquery.min.js"></script>
+    <!--SCRIPTS END-->
+    <script src="./samosa_singh_files/semantic.min.js"></script>
+
+    <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+
+
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+     /*------*/
+  #slides {
+    position: relative;
+    height: 800px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
+
+  .slide {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      transition: opacity 1s;
+  }
+
+  .showing {
+      opacity: 1;
+      z-index: 2;
+  }
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+  .slide {
+      font-size: 40px;
+     
+
+      background: #333;
+      color: #fff;
+  }
+
+  .slide:nth-of-type(1) {
+      background-image:url(slideshow/1.jpg) ;
+      background-size:cover
+  }
+  .slide:nth-of-type(2) {
+      background-image:url(slideshow/2.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(3) {
+      background-image:url(slideshow/3.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(4) {
+      background-image:url(slideshow/4.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(5) {
+      background-image:url(slideshow/5.jpg) ;
+
+      background-size:cover
+  }
+
+
+
+  </style>
+
+  <script src="assets/library/jquery.min.js"></script>
+  <script src="../dist/components/visibility.js"></script>
+  <script src="../dist/components/sidebar.js"></script>
+  <script src="../dist/components/transition.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body>
+
+
+
+<!-- Page Contents -->
+<div class="pusher">
+    <div class="ui inverted attached segment">
+      <div class="ui container">
+         
+            
+        <div class="ui large secondary inverted pointing menu">
+          <div class="ui item" style="margin:0em;padding: 0em">
+          <img class="ui mini image" src="logo_inverted.png">
+          </div>
+          <div class="right menu">
+            <a class="item" href="#stores">Stores</a>
+            <a class="item" href="#contactus">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="ui inverted vertical masthead center aligned attached segment" style="background-image: url(chocossa_2.jpg);    background-position: 20% 50%;
+  background-size: cover ">
+
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+       	Samosa Singh
+      </h1>
+
+      <h2>Who says only aaloo goes into a samosa! Experience the change at Samosa Singh</h2>
+      <div class="ui huge primary button">Get Started </div>
+    </div>
+
+  </div>
+  
+
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks--our very own humble samosa and present it to the customers in very different and innovative way.
+          <p>
+          We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!! </p>
+
+		</p>
+
+        </div>
+        <div class="six wide right floated column">
+          <img src="samosa_wide.jpg" class="ui large bordered rounded image">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="ui inverted attached segment">
+  	
+	<h3 class="ui inverted centered header">Samosa Story, How Samosa’s came to India?
+ </h3>
+  </div>
+  <div class="ui inverted vertical masthead center aligned attached segment" style="background-image: url(wallpaper_smaller.jpg);    background-position: 20% 50%;
+  background-size: cover ">
+
+
+  </div>
+
+  <div class="ui inverted attached segment" id="stores">
+  	
+
+	<h3 class="ui inverted centered header">Visit our outlets in Bangalore to Experience the change!</h3>
+  </div>
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <div class="ui header">Neeladari nagar</div>
+          <p>Samosa Singh, 
+            16th A cross, 
+            Electronic city phase 1 
+            Bangalore-560100</p>
+        </div>
+        <div class="column">
+          <div class="ui header">Arcade Mall</div>
+          <p>Samosa Singh, 
+          Gopalan multiplex, Arcade Mall 
+          Mysore Road, RR Nagar
+          Bangalore-560039 </p>
+         
+        </div>
+        <div class="column">
+          <div class="ui header">Phoenix Market City</div>
+
+          <p>Samosa Singh, 
+          PVR Cinemas, Phoenix Market City 
+          Whitefield Main Road, Mahadevpura
+          Bengaluru- 560048 </p>
+                   
+        </div>
+        <div class="column">
+          <div class="ui header">Orion Mall</div>
+
+          <p>Samosa Singh,
+          Orion mall near PVR cinemas
+          Brigade Gateway, Malleshwaram West
+          Bengaluru- 560055 </p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+
+  <div class="ui">
+    
+    <ul id="slides">
+      <li class="slide showing"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+    </ul>
+  </div>
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <p>"So, this is a joint worth reordering from and revisiting. They offer such a simple preparation with so many variations and twists that will surely excite you."</p>
+          <a class="ui meta right floated sub header" href="https://foodielandblog.blogspot.in/2016/02/samosa-singh-review-electronic-city.html">-The Foodie Land Blog</a>
+        </div>
+        <div class="column">
+          <p>"All variety of samosa are very delicious and interesting. We are equally impressed with the Burger, Wrap and Chat. All food items kept on increasing the curiosity and made it more and more interesting."</p>
+          <a class="ui meta right floated sub header" href="http://www.theheebee.com/2016/09/27/experience-change-samosa-singh/">-The Hee Bee</a>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui inverted vertical footer segment" id="contactus">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="five wide column">
+          <h4 class="ui inverted header">Contact Us</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Email: woknstovefoodworks@gmail.com 
+</a>
+            
+
+          <a href="#" class="item"> 
+Facebook: www.facebook.com/samosasinghbangalore </a>
+            
+          </div>
+        </div>
+        
+        <div class="six wide column">
+          <h4 class="ui inverted header">For bulk orders and enquiries call:</h4>
+		<div class="ui list">
+		 
+		  <div class="item">
+
+		    <div class="content">
+		      91-9741850433
+		    </div>
+		  </div>
+		  <div class="item">
+
+		    <div class="content">
+		      +91-9741850841
+		    </div>
+		  </div>
+		  <div class="item">
+
+		    <div class="content">
+		      080-49565499
+		    </div>
+		  </div>
+		</div>
+        </div>
+        <div class="five wide column">
+          <h4 class="ui inverted header">Careers</h4>
+          <p>Join our team.
+Stay tuned in for openings</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+	</body>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,2000);
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+  
+  
+  
+});
+
+</script>
+
+<script src="jquery.min.js"></script>
+<script>
+// handle links with @href started with '#' only
+$(document).on('click', 'a[href^="#"]', function(e) {
+    // target element id
+    var id = $(this).attr('href');
+
+    // target element
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
+    }
+
+    // prevent standard hash navigation (avoid blinking in IE)
+    e.preventDefault();
+
+    // top position relative to the document
+    var pos = $id.offset().top;
+
+    // animated top scrolling
+    $('body, html').animate({scrollTop: pos});
+});
+
+</script>
+</html>
+
