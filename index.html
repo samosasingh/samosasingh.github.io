@@ -44,56 +44,6 @@
 
   <body>
 
-
-    <!--
-        Client-side Templates
-        ========================
-
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
-        
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
-
-    <!--TEMPLATES-->
-    
-    <!--TEMPLATES END-->
-
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-      
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
-          
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
-
     <!--SCRIPTS-->
     <script src="./samosa_singh_files/sails.io.js"></script>
     <script src="./samosa_singh_files/jquery.min.js"></script>
@@ -189,6 +139,75 @@
       }
     }
 
+  /*------*/
+  #slides {
+    position: relative;
+    height: 800px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
+
+  .slide {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 1;
+
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      transition: opacity 1s;
+  }
+
+  .showing {
+      opacity: 1;
+      z-index: 2;
+  }
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+  .slide {
+      font-size: 40px;
+     
+
+      background: #333;
+      color: #fff;
+  }
+
+  .slide:nth-of-type(1) {
+      background-image:url(slideshow/1.jpg) ;
+      background-size:cover
+  }
+  .slide:nth-of-type(2) {
+      background-image:url(slideshow/2.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(3) {
+      background-image:url(slideshow/3.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(4) {
+      background-image:url(slideshow/4.jpg) ;
+      background-size:cover
+
+  }
+  .slide:nth-of-type(5) {
+      background-image:url(slideshow/5.jpg) ;
+
+      background-size:cover
+  }
+
+
+
 
   </style>
 
@@ -224,28 +243,9 @@
 </head>
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Work</a>
-    <a class="item">Company</a>
-    <a class="item">Careers</a>
-    <div class="right menu">
-      <div class="item">
-        <a class="ui button">Log in</a>
-      </div>
-      <div class="item">
-        <a class="ui primary button">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 <!-- Page Contents -->
 <div class="pusher">
+  
   <div class="ui inverted vertical masthead center aligned segment" style="background-image: url(chocossa_2.jpg);    background-position: 20% 50%;
   background-size: cover ">
 
@@ -264,11 +264,11 @@
 
     <div class="ui text container">
       <h1 class="ui inverted header">
-       	Samosa Singh
+        Samosa Singh
       </h1>
 
       <h2>Who says only aaloo goes into a samosa! Experience the change at Samosa Singh</h2>
-      <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+      <div class="ui huge primary button">Get Started</div>
     </div>
 
   </div>
@@ -339,15 +339,15 @@ Bengaluru- 560055 </p>
     </div>
   </div>
 
-  <div class="ui vertical stripe segment">
-
-      
-      <h4 class="ui horizontal header divider">
-        <a href="#">Menu</a>
-      </h4>
-      <img class="ui image" src="menu.jpg">
-
-
+  <div class="ui">
+    
+    <ul id="slides">
+      <li class="slide showing"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+      <li class="slide"></li>
+    </ul>
   </div>
   <div class="ui vertical stripe quote segment">
     <div class="ui equal width stackable internally celled grid">
@@ -422,3 +422,23 @@ Stay tuned in for openings</p>
 
 	</body>
 </html>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide,2000);
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide+1)%slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+  
+  
+  
+});
+
+</script>
