@@ -33,11 +33,10 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
 
-    <link rel="stylesheet" type="text/css" href="./samosa_singh_files/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/semantic/semantic.min.css">
     <!--STYLES-->
-    <link rel="stylesheet" href="./samosa_singh_files/importer.css">
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Amaranth">
+    <link rel="stylesheet" href="./assets/importer.css">
+    <link href="https://fonts.googleapis.com/css?family=Signika+Negative" rel="stylesheet">
     <!--STYLES END-->
     <style>
         .hidden {
@@ -100,17 +99,14 @@
     -->
 
     <!--SCRIPTS-->
-    <script src="./samosa_singh_files/sails.io.js"></script>
-    <script src="./samosa_singh_files/jquery.min.js"></script>
+    <script src="./assets/sails.io.js"></script>
+    <script src="./assets/jquery.min.js"></script>
     <!--SCRIPTS END-->
-    <script src="./samosa_singh_files/semantic.min.js"></script>
+    <script src="./assets/semantic/semantic.min.js"></script>
 
     <style type="text/css">
 
-    .hidden.menu {
-      display: none;
-    }
-
+  
     .masthead.segment {
       min-height: 700px;
       padding: 1em 0em;
@@ -120,9 +116,7 @@
     .masthead .logo.item img {
       margin-right: 1em;
     }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
+    
     .masthead h1.ui.header {
       margin-top: 3em;
       margin-bottom: 0em;
@@ -166,21 +160,10 @@
       padding: 5em 0em;
     }
 
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
+   
 
     @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
+    
       .masthead.segment {
         min-height: 350px;
       }
@@ -273,11 +256,15 @@ just for appearance; change whatever you want
   }
 
   .slide2 {
-      position: absolute;
+       position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 
-      top: 200px;
+  
+
       width: 100%;
-      height: 100%;
+      /*height: 100%;*/
       opacity: 0;
       z-index: 1;
 
@@ -288,8 +275,12 @@ just for appearance; change whatever you want
       transition: opacity 1s;
       color: #eeeeee;
 
-      font-family: "Amaranth";
-     font-style: normal;
+      font-family: 'Signika Negative', sans-serif;
+       font-style: normal;
+  }
+  body {
+
+      font-family: 'Signika Negative', sans-serif;
   }
 
   .showing2 {
@@ -348,33 +339,8 @@ just for appearance; change whatever you want
 
   <script src="assets/library/jquery.min.js"></script>
   <script src="../dist/components/visibility.js"></script>
-  <script src="../dist/components/sidebar.js"></script>
   <script src="../dist/components/transition.js"></script>
-  <script>
-  $(document)
-    .ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-  </script>
+ 
 </head>
 <body>
 
@@ -382,67 +348,84 @@ just for appearance; change whatever you want
 
 <!-- Page Contents -->
 <div class="pusher">
-    <div class="ui inverted attached segment">
+    <div class="ui attached segment">
       <div class="ui container">
          
             
-        <div class="ui large secondary inverted pointing menu">
+        <div class="ui ui fixed large menu" style="background-color: #f3a308">
           
           <div class="right menu">
+            <a class="item" href="#aboutus">About us</a>
+            <a class="item" href="#story">Samosa Story</a>
             <a class="item" href="#stores">Stores</a>
+            <a class="item" href="#team">Team</a>
             <a class="item" href="#contactus">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
-  <div class="ui inverted vertical masthead center aligned attached segment" style="background-image: url(wooden_bg.jpg);    background-position: 20% 50%;
+  <div class="ui inverted vertical masthead center aligned attached segment" style="background-image: url(wooden_bg.png);   
   background-size: cover ">
 
 
     <div class="ui text container">
 
-       	<div class="ui large  image" style="padding-top: 6em"><img src="logo_light.png"></div>
+       	<div class="ui large  image" style="margin-top: -5em"><img src="logo_orange.png"></div>
 
 
-      <h2 style="">Who says only aaloo goes into a samosa! <br>Experience the change at Samosa Singh</h2>
-      <a class="ui large inverted button" href="#start">Learn More</a>
+      <h2 style="margin-top: -5em"><i>Who says only aaloo goes into a samosa! <br>Experience the change at Samosa Singh</i></h2>
 
     </div>
 
   </div>
   
+<!-- ABOUT US SECTION -->
 
-  <div class="my-container" id="start">
-    <h1 class=""><p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks--our very own humble samosa and present it to the customers in very different and innovative way.</p>
-          <p>
-          We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!! </p></h1>
-    <img src="samosa_wide.jpg">
+  <div class="my-container" id="aboutus">
+
+   <ul id="slides" >
+      <li class="ui slide showing ">
+        <h1 style="font-family: 'Signika Negative',sans-serif">
+        <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
+        <p>
+        We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!! 
+        </p>
+        </h1>
+        <img src="samosa_wide.jpg">
+      </li>
+      <li class="ui slide showing ">
+        <h1 style="font-family: 'Signika Negative',sans-serif; font-style: normal;">
+        <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
+        <p>
+        We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!
+        </p>
+        </h1>
+        <img src="chocossa_2.jpg">
+      </li>
+    </ul>
+
   </div>
 
 
 
-  
-  <div class="ui inverted attached segment">
-  	
-    <h3 class="ui inverted centered header">Samosa Story, How Samosa’s came to India?</h3>
-  </div>
 
 
 
-
+<!-- STORY SECTION -->
   <div class="ui " style=" background-image:url(wallpaper_smaller_dark.jpg) ;
-    background-size:cover;">
+    background-size:cover;" id="story">
     <div class="ui center aligned container">
 
-      <ul id="slides2">
+      <ul id="slides2" >
 
 
           <li class="ui slide2 showing2 ">
           <p>
-          The capital of Akbar’s empire has a very famous monument by the name of “SAMOSA MAHAL.” Samosa Mahal is so known because of its triangular shape that resembles the shape of an Indian snack known as 'samosa'. It is said to be the residence of one of the nobles of Akbar.
+         The capital of Akbar’s empire has a very famous monument by the name of “SAMOSA MAHAL.” Samosa Mahal is so known because of its triangular shape that resembles the shape of an Indian snack known as 'samosa'. It is said to be the residence of one of the nobles of Akbar.
           </p></li>
           <li class="slide2"><p>Sunita Williams took Samosas with her to space.</p></li>
           <li class="slide2"><p>Due to its overwhelming popularity, Samosa is conferred the title “The King of Indian Snacks”.</p></li>
+          <li class="slide2"><p>According to one belief, Samosa is an attempt to pay tribute to Pythagoras: the father and inventor of Trigonometry as he comes from the Greek town of Samos: thus the triangle shape and name, Samosa. </p></li>
           <li class="slide2"><p>The Samosa is a truly international food which is enjoyed by millions around the globe</p></li>
           <li class="slide2"><p>Samosa is one of the most popular Indian snacks in USA, UK, and other European Countries. </p>
           </li>
@@ -451,7 +434,7 @@ just for appearance; change whatever you want
           <li class="slide2"><p>Vegetarian samosas originated in Uttar Pradesh.
           </p>
           </li>
-          <li class="slide2"><p>The largest samosa is 110.8 kg (244 lb 4 oz) and was created by Bradford College (UK), in Bradford, UK, on 22 June 2012. The samosa measured 135 cm long (53 in), 85 cm wide (33 in) and 29 cm high (11 in).
+          <li class="slide2"><p>Samosa has about 47 different names and about 1000 different varieties in terms of size, shape, fillings, texture etc. 
           </p>
           </li>
           <li class="slide2"><p>Samosa has about 47 different names and about 1000 different varieties in terms of size, shape, fillings, texture etc.  
@@ -463,20 +446,12 @@ just for appearance; change whatever you want
 
       </ul>
     </div>
-
-
-
-
-
   </div>
 
-  <div class="ui inverted attached segment" id="stores">
-  	
+  <!-- Stores segment -->
 
-	<h3 class="ui inverted centered header">Visit our outlets in Bangalore to Experience the change!</h3>
-  </div>
 
-  <div class="ui vertical stripe quote segment">
+  <div class="ui vertical stripe quote segment" id="stores" style="background-color: #f3a308">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
@@ -518,18 +493,8 @@ just for appearance; change whatever you want
 
 
   <br>
-
-  <div class="ui">
-    
-    <ul id="slides">
-      <li class="slide showing"></li>
-      <li class="slide"></li>
-      <li class="slide"></li>
-      <li class="slide"></li>
-      <li class="slide"></li>
-    </ul>
-  </div>
-  <div class="ui vertical stripe quote segment">
+  <!-- The review info -->
+  <div class="ui vertical stripe quote segment" id="reviews">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
@@ -544,6 +509,57 @@ just for appearance; change whatever you want
       </div>
     </div>
   </div>
+  <!-- Team segment -->
+  <div class="ui vertical stripe quote segment" style="background-color: #f3a308" id="team">
+
+    <div class="ui equal width stackable internally celled grid">
+      <div class="ui row">
+        <div class="column">
+          <div class="ui quotes vertical divided items">
+            <div class="item">
+              <div class="ui small avatar image">
+                <img src="team_sv.JPG">
+              </div>
+              <div class="quotes content">
+                <a href="https://www.linkedin.com/in/shikhar-veer-singh-a85a63a/" class="quotes header name">Shikhar Veer Singh
+                   <i class="ui linkedin square icon"></i>
+                </a>
+                <div class="ui quotes meta" id="meta">Co-founder & CEO
+
+                </div>
+                <div class="ui quotes text">
+                  <p>“The crispy, delicious and healthy samosa’s at Samosa Singh; is the reflection of the application of scientific knowledge and innovation with the basic cooking. Samosa Singh offers opportunities galore for innovation, growth and expansion.”
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui quotes vertical divided items">
+            <div class="item">
+              <div class="ui small avatar image">
+                <img src="team_nidhi.JPG">
+              </div>
+              <div class="quotes content">
+                <a href="https://www.linkedin.com/in/nidhi-singh-77aa1ba/" class="quotes header name">Nidhi Singh
+                   <i class="ui linkedin square icon"></i>
+                </a>
+               
+                <div class="ui quotes meta" id="meta">Co-founder</div>
+                <div class="ui quotes text">
+                  <p>Samosa Singh addresses the current gaps that exist in the Indian Samosa market. It offers convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner, thereby creating a huge mass-appeal. Samosa Singh offers “value addition” to the current huge un-organized Indian samosa market.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="ui inverted vertical footer segment" id="contactus">
     <div class="ui container">
@@ -551,39 +567,49 @@ just for appearance; change whatever you want
         <div class="five wide column">
           <h4 class="ui inverted header">Contact Us</h4>
           <div class="ui inverted link list">
-            <a href="#" class="item">Email: woknstovefoodworks@gmail.com 
+            <a href="#" class="item">
+              <i class="ui mail icon"></i>
+            woknstovefoodworks@gmail.com 
 </a>
             
 
-          <a href="#" class="item"> 
-Facebook: www.facebook.com/samosasinghbangalore </a>
+          <a href="www.facebook.com/samosasinghbangalore" class="item"> 
+           <i class="ui facebook icon"></i> 
+           www.facebook.com/samosasinghbangalore </a>
             
           </div>
         </div>
         
         <div class="six wide column">
           <h4 class="ui inverted header">For bulk orders and enquiries call:</h4>
-		<div class="ui list">
+
+          <div class="ui inverted link list">
+
 		 
-		  <div class="item">
+      		  <div class="item">
 
-		    <div class="content">
-		      91-9741850433
-		    </div>
-		  </div>
-		  <div class="item">
+      		    <div class="content">
+                <i class="ui call icon"></i>
+      		      91-9741850433
+      		    </div>
+      		  </div>
+      		  <div class="item">
 
-		    <div class="content">
-		      +91-9741850841
-		    </div>
-		  </div>
-		  <div class="item">
+      		    <div class="content">
+                <i class="ui call icon"></i>
 
-		    <div class="content">
-		      080-49565499
-		    </div>
-		  </div>
-		</div>
+      		      +91-9741850841
+      		    </div>
+      		  </div>
+      		  <div class="item">
+
+      		    <div class="content">
+                <i class="ui call icon"></i>
+
+      		      080-49565499
+      		    </div>
+      		  </div>
+      		</div>
         </div>
         <div class="five wide column">
           <h4 class="ui inverted header">Careers</h4>
@@ -608,7 +634,7 @@ Stay tuned in for openings</p>
 
     var slides = document.querySelectorAll('#slides .slide');
     var currentSlide = 0;
-    var slideInterval = setInterval(nextSlide,2000);
+    var slideInterval = setInterval(nextSlide,3000);
 
     function nextSlide() {
         slides[currentSlide].className = 'slide';
