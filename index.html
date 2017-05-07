@@ -189,6 +189,7 @@ email address info@samosasingh.com -->
     padding: 0px;
     margin: 0px;
     list-style-type: none;
+    background-color: #000000;
   }
 
   .slide {
@@ -210,6 +211,10 @@ email address info@samosasingh.com -->
       opacity: 1;
       z-index: 2;
   }
+  .dim {
+      opacity: 0.4;
+      z-index: 2;
+  }
   
 /*
 non-essential styles:
@@ -217,37 +222,14 @@ just for appearance; change whatever you want
 */
 
   .slide {
-      font-size: 40px;
+      font-size: 30px;
+      color: #ffffff;
+      padding-top: 5em
      
 
-      background: #333;
-      color: #fff;
+      
   }
 
-  .slide:nth-of-type(1) {
-      background-image:url(slideshow/1.jpg) ;
-      background-size:cover
-  }
-  .slide:nth-of-type(2) {
-      background-image:url(slideshow/2.jpg) ;
-      background-size:cover
-
-  }
-  .slide:nth-of-type(3) {
-      background-image:url(slideshow/3.jpg) ;
-      background-size:cover
-
-  }
-  .slide:nth-of-type(4) {
-      background-image:url(slideshow/4.jpg) ;
-      background-size:cover
-
-  }
-  .slide:nth-of-type(5) {
-      background-image:url(slideshow/5.jpg) ;
-
-      background-size:cover
-  }
 
 
 
@@ -374,37 +356,43 @@ just for appearance; change whatever you want
        	<div class="ui large  image" style="margin-top: -5em"><img src="logo_orange.png"></div>
 
 
-      <h2 style="margin-top: -5em; font-family: 'Apple Chancery', cursive;">Who says only aaloo goes into a samosa! <br>Experience the change at Samosa Singh</h2>
+      <h2 style="margin-top: -5em; font-family: 'Apple Chancery', cursive;color: #f3a308">Who says only aaloo goes into a samosa! <br>Experience the change at Samosa Singh</h2>
 
     </div>
 
   </div>
   
 <!-- ABOUT US SECTION -->
+<!-- STORY SECTION -->
+  <div class="ui" id="story">
+    <div class="ui center aligned">
 
-  <div class="my-container" id="aboutus">
+      <div class="my-container" id="aboutus">
 
-   <ul id="slides" >
-      <li class="ui slide showing ">
-        <h1 style="font-family: 'Signika Negative',sans-serif">
-        <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
-        <p>
-        We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!
-        </p>
-        </h1>
-        <img src="samosa_wide.jpg">
-      </li>
-      <li class="ui slide showing ">
-        <h1 style="font-family: 'Signika Negative',sans-serif; font-style: normal;">
-        <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
-        <p>
-        We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!
-        </p>
-        </h1>
-        <img src="chocossa_2.jpg">
-      </li>
-    </ul>
+       <ul id="slides" >
+          <li class="ui slide showing " style="background-image:linear-gradient(to right, grey 3%, grey 50%), url(samosa_wide.jpg);background-blend-mode:multiply;  background-size: cover">
+            <!-- <img src="samosa_wide.jpg"> -->
+            <div class="ui container description" style="font-family: 'Signika Negative',sans-serif">
+            <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
+            <p>
+            We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!
+            </p>
+            </div>
+          </li>
+          <li class="ui slide " style="background-image: linear-gradient(to right, grey 3%, grey 50%),url(chocossa_2.jpg);background-size: cover;background-blend-mode:multiply;">
+            <!-- <img src="chocossa_2.jpg"> -->
+            <div class="ui container description" style="font-family: 'Signika Negative',sans-serif; font-style: normal;">
+            <p>Samosa Singh was started in Feb 2016, with an objective of reinventing the king of Indian snacks - our very own humble samosa and present it to the customers in very different and innovative way.</p>
+            <p>
+            We offer convergence of varieties with regional preferences at one place in a hygienic, fresh and exciting manner!
+            </p>
+            </div>
+          </li>
+       
+        </ul>
 
+      </div>
+    </div>
   </div>
 
 
